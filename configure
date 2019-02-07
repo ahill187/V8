@@ -70,6 +70,7 @@ ${CXXCPP} ${CPPFLAGS} ${PKG_CFLAGS} ${CXXFLAGS} src/legacy/test.cpp >/dev/null 2
 if [ $? -eq 0 ]; then
   echo "Found legacy version of libv8"
   PKG_LIBS=$(echo "$PKG_LIBS" | sed -e "s/-lv8_libplatform//")
+  echo $PKG_LIBS
   sed -e "s|@cflags@|$PKG_CFLAGS|" -e "s|@libs@|$PKG_LIBS|" src/legacy/Makevars.in > src/Makevars
   exit 0
 fi
