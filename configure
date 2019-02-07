@@ -50,6 +50,9 @@ fi
 echo "Using PKG_CFLAGS=$PKG_CFLAGS"
 echo "Using PKG_LIBS=$PKG_LIBS"
 
+echo $PKG_TEST_HEADER
+echo ${CXXCPP}
+
 # Test for libv8
 echo "#include $PKG_TEST_HEADER" | ${CXXCPP} ${CPPFLAGS} ${PKG_CFLAGS} ${CXXFLAGS} -xc++ - >/dev/null 2>&1
 if [ $? -ne 0 ]; then
