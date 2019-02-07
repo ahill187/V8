@@ -52,7 +52,9 @@ echo "Using PKG_LIBS=$PKG_LIBS"
 
 echo $PKG_TEST_HEADER
 echo ${CXXCPP}
-
+echo ${CPPFLAGS}
+echo ${PKG_CFLAGS}
+echo ${CXXFLAGS}
 # Test for libv8
 echo "#include $PKG_TEST_HEADER" | ${CXXCPP} ${CPPFLAGS} ${PKG_CFLAGS} ${CXXFLAGS} -xc++ - >/dev/null 2>&1
 if [ $? -ne 0 ]; then
